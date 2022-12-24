@@ -5,9 +5,10 @@ namespace ZahranMovie.Models
     public class Cinema
     {
         [Key]
-        public int Id { get; set; }
-        public string? Image { get; set; }
-        public string? Name { get; set; }
-        public string? Description { get; set; }
+        public int CinemaId { get; set; }
+        public string? CinemaImage { get; set; }
+        public string? CinemaName { get; set; }
+        public string? CinemaDescription { get; set; }
+        public List<Movie>? Movie { get; set; }
     }
 }

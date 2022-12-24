@@ -1,16 +1,25 @@
-﻿using ZahranMovie.Data;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using ZahranMovie.Data.Enum;
 
 namespace ZahranMovie.Models
 {
     public class Movie
     {
-        public int Id { get; set; }
-        public string? Image { get; set; }
-        public string? Name { get; set; }
-        public string? Description { get; set; }
-        public double Price { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public int MovieId { get; set; }
+        public string? MovieImage { get; set; }
+        public string? MovieName { get; set; }
+        public string? MovieDescription { get; set; }
+        public double MoviePrice { get; set; }
+        public DateTime MovieStartDate { get; set; }
+        public DateTime MovieEndDate { get; set; }
         public MovieCinema MovieCinema { get; set; }
+        public int ProducerId { get; set; }
+        [ForeignKey("ProducerId")]
+        public Producer? Producer { get; set; }
+        public int CinemaId { get; set; }
+        [ForeignKey("CinemaId")]
+        public Producer? Cinema { get; set; }
+        public List<Actor_Movie>? Actor_Movie { get; set; }
+
     }
 }

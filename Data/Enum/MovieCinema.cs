@@ -1,8 +1,8 @@
-﻿namespace ZahranMovie.Data
+﻿namespace ZahranMovie.Data.Enum
 {
     public enum MovieCinema
     {
-        Action=1,
+        Action = 1,
         Drama,
         Comedy,
         Romance
