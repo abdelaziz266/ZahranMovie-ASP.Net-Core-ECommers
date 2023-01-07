@@ -1,3 +1,4 @@
+
 html {
   font-size: 14px;
 }
@@ -14,5 +15,7 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: #152733;
+    color:#ffffff;
 }

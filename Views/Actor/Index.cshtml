@@ -1,0 +1,51 @@
+﻿<link href="~/css/Forms/Actors.css" rel="stylesheet"/>
+@model List<ZahranMovie.Models.Actor>
+@{
+    ViewData["Title"] = "List Of Actors";
+    int x = 1;
+}
+<h4 class="text-center shadow col-6 mx-auto">Actors</h4>
+<table class="table border-dark text-white">
+    <thead class="bg-dark text-light">
+        <tr>
+            <th class="text-center">#</th>
+            <th class="text-center">Image</th>
+            <th class="text-center">Name</th>
+            <th class="text-center">Bio</th>
+            <th class="text-center">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>@x</th>
+                <td class="text-center px-3 ActorImage"><img src="@item.ActorImage" /></td>
+                <td class="text-center px-3 ActorName">@item.ActorName</td>
+                <td class="text-center px-3 ActorBio">@item.ActorBio</td>
+                <td class="text-center px-3 ActorAction">
+                    <div class="row">
+                        <button class="btn btn-outline-danger  col-11 m-2 col-xl-5">Remove</button>
+                        <button class="btn btn-outline-success col-11 m-2 col-xl-5">Details</button>
+                    </div>
+                </td>
+            </tr>
+            x++;
+        }
+
+    </tbody>
+</table>
+<!-- Button trigger modal -->
+<div class="row">
+    <button class="btn btn-secondary col-2 me-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">Add New Actor</button>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+</div>
