@@ -18,7 +18,7 @@ namespace ZahranMovie.Models
         public Producer? Producer { get; set; }
         public int CinemaId { get; set; }
         [ForeignKey("CinemaId")]
-        public Producer? Cinema { get; set; }
+        public Cinema? Cinema { get; set; }
         public List<Actor_Movie>? Actor_Movie { get; set; }
 
     }
