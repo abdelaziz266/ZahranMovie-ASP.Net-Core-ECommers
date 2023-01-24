@@ -8,18 +8,33 @@
     @foreach (var item in Model)
     {
         <div class="card mb-3 col-12 col-md-6 col-xl-4">
+                <h5 class="card-title bg-primary text-white text-center shadow">@item.MovieName</h5>
             <div class="row g-0">
-                <h5 class="card-title text-center shadow col-12">@item.MovieName</h5>
                 <div class="col-md-4">
                     <img src="@item.MovieImage" class="img-fluid rounded-start" alt="@item.MovieName">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        
                         <p class="card-text">@item.MovieDescription</p>
-                        <p class="card-text">@item.Cinema.CinemaName</p>
+                        <p class="card-text"><b>Cinema:</b>@item.Cinema.CinemaName</p>
+                        <p class="card-text"><b>Category:</b>@item.MovieCinema</p>
                         <p class="card-text"><b>Start Date:</b>@item.MovieStartDate</p>
                         <p class="card-text"><b>End Date:</b>@item.MovieEndDate</p>
+                        <p class="card-text">
+                            <b>Status:</b>@if (DateTime.Now == item.MovieStartDate && DateTime.Now == item.MovieEndDate)
+                            {
+                                <span class="badge bg-success text-white">AVAILABLE</span>
+                            }
+                            else if (DateTime.Now > item.MovieEndDate)
+                            {
+                                <span class="badge bg-danger text-white">EXPIRED</span>
+
+                            }
+                            else
+                            {
+                                <span class="badge bg-primary text-white">UPCOMING</span>
+                            }
+                        </p>
                     </div>
                 </div>
             </div>

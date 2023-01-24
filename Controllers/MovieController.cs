@@ -14,7 +14,7 @@ namespace ZahranMovie.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var data = await db.Movies.ToListAsync();
+            var data = await db.Movies.Include(M=>M.Cinema).ToListAsync();
             return View(data);
         }
     }
