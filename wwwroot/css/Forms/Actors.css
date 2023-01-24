@@ -1,10 +1,14 @@
-﻿.ActorImage img
-{
-    width:100px;
-    height:100px;
-    border-radius:10px;
+﻿:root {
+    --blue: #152733;
 }
-.ActorName, .ActorBio{
+.Image img {
+    max-width: 150px;
+    max-height: 150px;
+}
+.Name, .Bio{
     min-width: 200px;
     max-width: 500px;
+}
+td{
+    color:var(--blue);
 }

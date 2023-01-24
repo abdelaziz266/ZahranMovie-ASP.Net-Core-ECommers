@@ -1,0 +1,28 @@
+﻿<link href="~/css/Forms/Movies.css" rel="stylesheet" />
+@model List<ZahranMovie.Models.Movie>
+@{
+    ViewData["Title"] = "List Of Movies";
+}
+<h4 class="text-center shadow col-6 mx-auto">Cinemas</h4>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="card mb-3 col-12 col-md-6 col-xl-4">
+            <div class="row g-0">
+                <h5 class="card-title text-center shadow col-12">@item.MovieName</h5>
+                <div class="col-md-4">
+                    <img src="@item.MovieImage" class="img-fluid rounded-start" alt="@item.MovieName">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        
+                        <p class="card-text">@item.MovieDescription</p>
+                        <p class="card-text">@item.Cinema.CinemaName</p>
+                        <p class="card-text"><b>Start Date:</b>@item.MovieStartDate</p>
+                        <p class="card-text"><b>End Date:</b>@item.MovieEndDate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

@@ -1,10 +1,10 @@
-﻿<link href="~/css/Forms/Actors.css" rel="stylesheet"/>
-@model List<ZahranMovie.Models.Actor>
+﻿<link href="~/css/Forms/Producers.css" rel="stylesheet" />
+@model List<ZahranMovie.Models.Producer>
 @{
-    ViewData["Title"] = "List Of Actors";
+    ViewData["Title"] = "List Of Producers";
     int x = 1;
 }
-<h4 class="text-center shadow col-6 mx-auto">Actors</h4>
+<h4 class="text-center shadow col-6 mx-auto">Producers</h4>
 <table class="table border-dark">
     <thead class="bg-dark text-light">
         <tr>
@@ -20,18 +20,18 @@
         {
             <tr>
                 <th>@x</th>
-                <td class="text-center px-3 Image"><img class="rounded-circle" src="@item.ActorImage" alt="@item.ActorName"/></td>
-                <td class="text-center px-3 Name">@item.ActorName</td>
-                <td class="text-center px-3 Bio">@item.ActorBio</td>
+                <td class="text-center px-3 Image"><img class="rounded-circle" src="@item.ProducerImage" alt="@item.ProducerName" /></td>
+                <td class="text-center px-3 Name">@item.ProducerName</td>
+                <td class="text-center px-3 Bio">@item.ProducerBio</td>
                 <td class="text-center px-3 Action">
-                        <a class="btn btn-outline-primary me-2"><i class="bi bi-pencil-square"></i></a>
-                        <a class="btn btn-outline-info    me-2"><i class="bi bi-eye"></i></a>
-                        <a class="btn btn-outline-danger  me-2"><i class="bi bi-trash"></i></a>
+                    <a class="btn btn-outline-primary me-2"><i class="bi bi-pencil-square"></i></a>
+                    <a class="btn btn-outline-info    me-2"><i class="bi bi-eye"></i></a>
+                    <a class="btn btn-outline-danger  me-2"><i class="bi bi-trash"></i></a>
                 </td>
             </tr>
             x++;
         }
-
+        }
     </tbody>
 </table>
 <!-- Button trigger modal -->

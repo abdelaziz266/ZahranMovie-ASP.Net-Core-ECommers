@@ -1,0 +1,8 @@
+﻿.card img
+{
+    max-height:100%;
+}
+.card-body
+{
+    padding: .5rem !important;
+}
